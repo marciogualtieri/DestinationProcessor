@@ -80,7 +80,7 @@ schema that could be processed by JAXB to generate the model classes from, I opt
 in Java using  annotations  instead  of defining  an XSD file, as I feel  it to be easier  to maintain  by
 developers.
 
-For generating the HTML output, I have chosen Freemarker [4]. The following Freemarker template is used to
+For generating the HTML output, I have chosen [Freemarker](http://freemarker.incubator.apache.org). The following Freemarker template is used to
 define the HTML output structure:
 
      ./src/main/resources/freemarker/templates/destinationOutput.ftl
