@@ -20,6 +20,7 @@ public class AppConstants {
     public static final String DESTINATION_FREEMARKER_PLACEHOLDER = "destination";
     public static final String OUTPUT_FILE_NAME_AND_PATH_TEMPLATE =
             "%s" + AppConstants.BLANK_CHAR_REPLACEMENT + "%d.html";
+    public static final int NANOSECS_IN_ONE_MILLISEC = 1000000;
 
     private AppConstants() {
     }

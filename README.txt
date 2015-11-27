@@ -59,6 +59,12 @@ default.taxonomy.file = taxonomy.xml
 default.destinations.file = destinations.xml
 default.output.base.directory = output
 
+Logging can be configured in the following file:
+
+./src/main/resources/log4j.xml
+
+At the moment, logs are generated in the folder "logs".
+
 +-------------------------------------+
 | ON THE DESIGN CHOICES               |
 +-------------------------------------+

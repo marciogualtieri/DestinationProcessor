@@ -15,7 +15,7 @@ import org.springframework.core.env.SimpleCommandLinePropertySource;
 public class CommandLineInterface {
     private static final Logger logger = LoggerFactory.getLogger(CommandLineInterface.class);
 
-    private final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+    private final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext();
     private final CommandLinePropertySource commandLinePropertySource;
 
     public CommandLineInterface(CommandLinePropertySource commandLinePropertySource) {
@@ -33,20 +33,32 @@ public class CommandLineInterface {
     }
 
     public void runProcessor() throws DestinationsFileUnmarshalException {
-        setCommandLinePropertySource(commandLinePropertySource);
-        context.setConfigLocation(AppConstants.APPLICATION_CONTEXT_FILE_NAME_AND_PATH);
-        context.registerShutdownHook();
-        context.refresh();
-        context.start();
+        setupApplicationContext();
+        applicationContext.start();
         try {
-            Processor processor = context.getBean(Processor.class);
+            Processor processor = applicationContext.getBean(Processor.class);
+            long startTime = System.nanoTime();
             processor.processAllDestinations();
+            long endTime = System.nanoTime();
+            logger.info(AppMessages.PROCESSING_DURATION_MESSAGE_FORMAT,
+                    elapsedTimeInMilliSecs(startTime, endTime));
         } finally {
-            context.close();
+            applicationContext.close();
         }
     }
 
-    private void setCommandLinePropertySource(CommandLinePropertySource commandLinePropertySource) {
+    private long elapsedTimeInMilliSecs(long startTimeInNanoSecs, long endTimeInNanoSecs) {
+        return (endTimeInNanoSecs - startTimeInNanoSecs) / AppConstants.NANOSECS_IN_ONE_MILLISEC;
+    }
+
+    private void setupApplicationContext() {
+        setupCommandLinePropertySource(commandLinePropertySource);
+        applicationContext.setConfigLocation(AppConstants.APPLICATION_CONTEXT_FILE_NAME_AND_PATH);
+        applicationContext.registerShutdownHook();
+        applicationContext.refresh();
+    }
+
+    private void setupCommandLinePropertySource(CommandLinePropertySource commandLinePropertySource) {
         for (String propertyName : commandLinePropertySource.getPropertyNames()) {
             System.setProperty(propertyName, commandLinePropertySource.getProperty(propertyName));
         }
