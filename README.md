@@ -17,7 +17,7 @@ Java 8 is required due to the use of method references and streams.
 
 Once the application is built, JavaDocs will be present in the following directory:
 
-     /target/apidocs/index.html
+     ./target/apidocs/index.html
 
 
 ### <a name="execute-the-jar-in-the-command-line"></a> EXECUTE THE JAR IN THE COMMAND LINE
