@@ -11,7 +11,7 @@
 | TEST & BUILD THE APPLICATION        |
 +-------------------------------------+
 
-$ mvn clean verify package
+$ mvn clean test package
 
 Requirements
 ------------
@@ -45,6 +45,11 @@ Examples:
           --output.base.directory=output
 
      $ java -jar ./target/destination-processor-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+For convenience, the sample  input files  provided  with  the  assignment are available  in the following
+directory:
+
+requirements/sample-input-files
 
 Configuration
 -------------
