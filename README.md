@@ -80,7 +80,7 @@ wild life, etc), destination  elements are stream parsed one by  one using [StaX
 with JAXB.
 
 The JAXB model (schema) for the XML inputs  (both taxonomy and destinations) is  defined by the classes in
-the package com.lonelyplanet.destination.processor.jaxb.model using JAXB annotations.  In the absence of a
+the package `com.lonelyplanet.destination.processor.jaxb.model` using JAXB annotations.  In the absence of a
 schema that could be processed by JAXB to generate the model classes from, I opted for  defining the model
 in Java using  annotations  instead  of defining  an XSD file, as I feel  it to be easier  to maintain  by
 developers.
