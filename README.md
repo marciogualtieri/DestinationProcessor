@@ -1,10 +1,10 @@
 ### Table of Contents
-#### 1. [TEST & BUILD THE APPLICATION](#test-and-build-the-application)
-#### 2. [EXECUTE THE JAR IN THE COMMAND LINE](#execute-the-jar-in-the-command-line)
-##### 2.1 [Usage](#usage)
-##### 2.2 [Examples](#examples)
-##### 2.3 [Configuration](#configuration)
-#### 3. [ON THE DESIGN CHOICES](#on-the-design-choices)
+#### [TEST & BUILD THE APPLICATION](#test-and-build-the-application)
+#### [EXECUTE THE JAR IN THE COMMAND LINE](#execute-the-jar-in-the-command-line)
+##### [Usage](#usage)
+##### [Examples](#examples)
+##### [Configuration](#configuration)
+#### [ON THE DESIGN CHOICES](#on-the-design-choices)
 
 
 ### <a name="test-and-build-the-application"></a> TEST & BUILD THE APPLICATION
