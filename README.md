@@ -11,6 +11,8 @@
 
      $ mvn clean test package
 
+Maven 2 and Java 8 are required to build the application.
+
 Java 8 is required due to the use of method references and streams.
 
 Once the application is built, JavaDocs will be present in the following directory:
