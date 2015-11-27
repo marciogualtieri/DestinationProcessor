@@ -9,7 +9,7 @@
 
 ### <a name="test-and-build-the-application"></a> TEST & BUILD THE APPLICATION
 
-$ mvn clean test package
+     $ mvn clean test package
 
 Java 8 is required due to the use of method references and streams.
 
