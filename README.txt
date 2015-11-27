@@ -1,0 +1,104 @@
++-------------------------------------+
+| TABLE OF CONTENTS                   |
++-------------------------------------+
+
+- TEST & BUILD THE APPLICATION ........
+- EXECUTE THE JAR IN THE COMMAND LINE .
+- ON THE DESIGN CHOICES ...............
+- REFERENCES ..........................
+
++-------------------------------------+
+| TEST & BUILD THE APPLICATION        |
++-------------------------------------+
+
+$ mvn clean verify package
+
+Requirements
+------------
+
+- Java 8 is required due to the use of method references and streams.
+
++-------------------------------------+
+| EXECUTE THE JAR IN THE COMMAND LINE |
++-------------------------------------+
+
+Usage
+-----
+
+$ java -jar ./target/destination-processor-1.0-SNAPSHOT-jar-with-dependencies.jar
+     [--destinations.file=<destinations file name and path>]
+     [--taxonomy.file=<taxonomy file name and path>]
+     [--output.base.directory=<output directory for HTML output files>]
+
+The HTML files will then be available in the output base directory:
+
+output/africa-355064.html
+output/bloemfontein-355615.html
+output/cape-town-355612.html
+...
+
+Examples:
+
+     $ java -jar ./target/destination-processor-1.0-SNAPSHOT-jar-with-dependencies.jar
+          --destinations.file=requirements/sample-input-files/destinations.xml
+          --taxonomy.file=requirements/sample-input-files/taxonomy.xml
+          --output.base.directory=output
+
+     $ java -jar ./target/destination-processor-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+Configuration
+-------------
+The three parameters, destinations.file, taxonomy.file and output.base.directory are optional, as default
+values for these can be configured in the following properties file:
+
+./src/main/resources/configuration.properties
+
+These are the default values at the moment:
+
+default.taxonomy.file = taxonomy.xml
+default.destinations.file = destinations.xml
+default.output.base.directory = output
+
++-------------------------------------+
+| ON THE DESIGN CHOICES               |
++-------------------------------------+
+
+JAXB[1] is used to unmarshal the XML elements for both destinations and taxonomy files. Due to performance
+factors, I have decided to unmarshal the whole  taxonomy and keep it in memory since for each  destination
+entry, the correspondent node entry needs  to be searched  in the taxonomy nodes. Also, taxonomy nodes are
+fairly small. Node search is performed in memory using Apache JXPath [2].
+
+Given that the destinations  can be quite big (due to destinations' content, such as information, history,
+wild life, etc), destination  elements are stream parsed one by  one using StaX [3] and  then unmarshalled
+with JAXB.
+
+The JAXB model (schema) for the XML inputs  (both taxonomy and destinations) is  defined by the classes in
+the package com.lonelyplanet.destination.processor.jaxb.model using JAXB annotations.  In the absence of a
+schema that could be processed by JAXB to generate the model classes from, I opted for  defining the model
+in Java using  annotations  instead  of defining  an XSD file, as I feel  it to be easier  to maintain  by
+developers.
+
+For generating the HTML output, I have chosen Freemarker [4]. The following Freemarker template is used to
+define the HTML output structure:
+
+./src/main/resources/freemarker/templates/destinationOutput.ftl
+
+Business rules (such as parsing the destination data and generating navigation) are then restricted to the
+Java code while the actual HTML structure is defined in the template.
+
+
++-------------------------------------+
+| REFERENCES                          |
++-------------------------------------+
+
+[1] JAXB:
+http://www.oracle.com/technetwork/articles/javase/index-140168.html
+
+[2] JXPath:
+https://commons.apache.org/proper/commons-jxpath/
+
+[3] StaX:
+https://docs.oracle.com/javase/tutorial/jaxp/stax/why.html
+
+[4] Freemarker:
+http://freemarker.incubator.apache.org/

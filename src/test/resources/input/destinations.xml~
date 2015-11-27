@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination atlas_id="3" asset_id="333" title="Hill Valley" title-ascii="Hill Valley">
+        <history>
+            <history>
+                <history>
+                    <![CDATA[History > History > History]]>
+                </history>
+                <overview>
+                    <![CDATA[History > History > Overview]]>
+                </overview>
+            </history>
+        </history>
+        <introductory>
+            <introduction>
+                <overview>
+                    <![CDATA[Introductory > Introduction > Overview]]></overview>
+            </introduction>
+        </introductory>
+        <practical_information>
+            <health_and_safety>
+                <before_you_go>
+                    <![CDATA[Practical Information > Health and Safety > Before You Go]]>
+                </before_you_go>
+                <dangers_and_annoyances>
+                    <![CDATA[Practical Information > Health and Safety > Dangers and Annoyances]]>
+                </dangers_and_annoyances>
+                <in_transit>
+                    <![CDATA[Practical Information > Health and Safety > In Transit]]>
+                </in_transit>
+                <while_youre_there>
+                    <![CDATA[Practical Information > Health and Safety > While You're There]]>
+                </while_youre_there>
+            </health_and_safety>
+            <money_and_costs>
+                <money>
+                    <![CDATA[Practical Information > Money and Costs > Money]]>
+                </money>
+                <costs>
+                    <![CDATA[Practical Information > Money and Costs > Costs]]>
+                </costs>
+            </money_and_costs>
+            <visas>
+                <other>
+                    <![CDATA[Practical Information > Visas > Other]]>
+                </other>
+                <permits>
+                    <![CDATA[Practical Information > Visas > Permits]]></permits>
+            </visas>
+        </practical_information>
+        <transport>
+            <getting_around>
+                <air>
+                    <![CDATA[Transport > Getting Around > Air]]>
+                </air>
+                <bicycle>
+                    <![CDATA[Transport > Getting Around > Bycicle]]>
+                </bicycle>
+                <boat>
+                    <![CDATA[Transport > Getting Around > Boat]]>
+                </boat>
+                <car_and_motorcycle>
+                    <![CDATA[Transport > Getting Around > Car and Motorcycle]]>
+                </car_and_motorcycle>
+                <hitching>
+                    <![CDATA[Transport > Getting Around > Hitching]]>
+                </hitching>
+                <local_transport>
+                    <![CDATA[Transport > Getting Around > Local Transport]]>
+                </local_transport>
+                <bus_and_train>
+                    <![CDATA[Transport > Getting Around > Bus and Train]]>
+                </bus_and_train>
+                <train>
+                    <![CDATA[Transport > Getting Around > Train]]>
+                </train>
+            </getting_around>
+            <getting_there_and_away>
+                <air>
+                    <![CDATA[Transport > Getting There and Away > Air]]>
+                </air>
+                <land>
+                    <![CDATA[Transport > Getting There and Away > Land]]>
+                </land>
+                <boat>
+                    <![CDATA[Transport > Getting There and Away > Boat]]>
+                </boat>
+            </getting_there_and_away>
+        </transport>
+        <weather>
+            <when_to_go>
+                <overview>
+                    <![CDATA[Weather > When To Go > Overview]]>
+                </overview>
+                <climate>
+                    <![CDATA[Weather > When To Go > Climate]]>
+                </climate>
+            </when_to_go>
+        </weather>
+        <wildlife>
+            <animals>
+                <mammals>
+                    <![CDATA[Wildlife > Animals > Mammals]]>
+                </mammals>
+            </animals>
+            <birds>
+                <overview>
+                    <![CDATA[Wildlife > Birds > Overview]]>
+                </overview>
+            </birds>
+            <endangered_species>
+                <overview>
+                    <![CDATA[Wildlife > Endangered Species > Overview]]>
+                </overview>
+            </endangered_species>
+            <overview>
+                <overview>
+                    <![CDATA[Wildlife > Overview > Overview]]>
+                </overview>
+            </overview>
+            <plants>
+                <overview>
+                    <![CDATA[Wildlife > Plants > Overview]]>
+                </overview>
+            </plants>
+        </wildlife>
+        <work_live_study>
+            <work>
+                <business>
+                    <![CDATA[Work Life Study > Work > Business]]>
+                </business>
+            </work>
+        </work_live_study>
+        <ignorable_gibberish>
+            <![CDATA[Tags not present in the JAXB model will be ignored.]]>
+        </ignorable_gibberish>
+    </destination>
+</destinations>
