@@ -13,7 +13,7 @@
 
 Java 8 is required due to the use of method references and streams.
 
-Once the application is built, JavaDocs will be generated in the following directory:
+Once the application is built, JavaDocs will be present in the following directory:
 
      /target/apidocs/index.html
 
