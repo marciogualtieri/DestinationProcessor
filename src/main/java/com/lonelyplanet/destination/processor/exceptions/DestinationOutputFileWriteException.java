@@ -1,7 +1,7 @@
 package com.lonelyplanet.destination.processor.exceptions;
 
-        import com.google.common.base.Throwables;
-        import com.lonelyplanet.destination.processor.messages.ExceptionMessages;
+import com.google.common.base.Throwables;
+import com.lonelyplanet.destination.processor.messages.ExceptionMessages;
 
 public class DestinationOutputFileWriteException extends Exception {
     private static final long serialVersionUID = 1L;
